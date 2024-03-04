@@ -22,10 +22,7 @@ export default function SideDrawer2({
     setIsOpen,
     topPanel,
     topPanelName,
-    topPanelButton,
     bottomPanelName,
-    bottomPanelButton,
-    bottomPanel,
     showFirstPanel=true,
     showSecondPanel=true,
   }) {
@@ -33,24 +30,19 @@ export default function SideDrawer2({
   const [isSecondPanel, setIsSecondPanel] = React.useState(true)
 
   const [firstPanel, setFirstPanel] = React.useState('first')
-  const [secondPanel, setSecondPanel] = React.useState('second')
-  const {project, setProject} = useStore()
+  const {project} = useStore()
+
   useEffect(()=>{
     setIsFirstPanel(showFirstPanel)
     setIsSecondPanel(showSecondPanel)
   },[])
 
-  useEffect(()=>{
-    console.log ('project', project)
-  },[isOpen])
 
   useEffect(() => {
     if(!isFirstPanel && !isSecondPanel){
       setIsOpen()
       setIsFirstPanel(true)
       setIsSecondPanel(true)
-      console.log('in the use effect')
-      console.log('in the side drawer')
     }
   }, [setIsFirstPanel, setIsSecondPanel, isFirstPanel, isSecondPanel, setIsOpen])
 
@@ -63,17 +55,6 @@ export default function SideDrawer2({
       setFirstPanel('second')
     }
   };
-
-  const handlePanelSelectionSecond = (event) => {
-    const panel = event.target.value;
-    console.log('panel', panel)
-    if (panel === 'top') {
-      setSecondPanel('first')
-    } else if (panel === 'bottom') {
-      setSecondPanel('second')
-    }
-  };
-
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -108,7 +89,9 @@ export default function SideDrawer2({
             width: drawerWidth,
             backgroundColor: (theme) => theme.palette.background.default,
             boxSizing: 'border-box',
+            borderLeft: '1px solid #323232',
             overflow:'hidden'},
+
         }}
       >
         <Toolbar />
@@ -167,34 +150,12 @@ export default function SideDrawer2({
                       </Stack>
                       </Stack>
                     </ListSubheader>
-                    <Stack>
+                    <Stack   >
                       <List
                       spacing={1}
-                      >
-                        {project.map((project, index) => (
-                            <ListItem  key={`accordian ${index}`}>
-                              <Accordion
-                              key={project.label}
-                              title={<Box sx={{fontWeight:'bold'}}>{project.label}</Box>}
-                              content={
-                                <Stack sx={{width:'320px', color:'#C4CDD6'}}>
-                                  <Stack direction='row' justifyContent={'space-between'}>
-                                    <Box>Calculated Annual Savings: </Box>
-                                    <Box sx={{fontWeight:'bold'}}>{project.calculatedAnnualSavings} DK</Box>
-                                  </Stack>
-                                  <Stack direction='row' justifyContent={'space-between'}>
-                                    <Box>Investment:  </Box>
-                                    <Box sx={{fontWeight:'bold'}}> {project.investment} DK</Box>
-                                  </Stack>
-                                  <Stack direction='row' justifyContent={'space-between'}>
-                                    <Box>Simple Repayment: </Box>
-                                    <Box sx={{fontWeight:'bold'}}>{project.simpleRepaymentPeriod} years</Box>
-                                  </Stack>
-                                </Stack>
 
-                                }/>
-                            </ListItem>
-                        ))}
+                      >
+                        {topPanel}
                       </List>
                   </Stack>
                 </List>

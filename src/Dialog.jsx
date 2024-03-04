@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Button from '@mui/material/Button';
 import MuiDialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -43,7 +43,7 @@ export default function Dialog({
         <IconButton aria-label="edit" size='small' onClick={handleClickOpen}>
           {icon}
         </IconButton>:
-        <Button variant="contained" size='medium' sx={{borderRadius:'30px', fontWeight:'bold'}} onClick={handleClickOpen} color={buttonColor}>
+        <Button variant="contained" size='small' sx={{borderRadius:'30px', fontWeight:'bold'}} onClick={handleClickOpen} color={buttonColor}>
           {buttonLabel}
         </Button>
       }
@@ -71,7 +71,6 @@ export default function Dialog({
               {tabs && currentTab===0 && dialogContent1}
               {tabs && currentTab===1 && dialogContent2}
               {tabs && currentTab===2 && dialogContent3}
-              {/* {!tabs && dialogContent} */}
               {!tabs && React.cloneElement(dialogContent, { onClose: handleClose })}
             </Typography>
             </Stack>

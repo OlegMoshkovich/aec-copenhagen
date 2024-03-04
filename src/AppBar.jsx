@@ -25,7 +25,6 @@ function Recent({onGoToLocation, onClose}){
   const {res, setProject} = useStore()
   console.log('res from dialog', res)
 
-
   return(
     <Stack
     direction='column'
@@ -33,34 +32,33 @@ function Recent({onGoToLocation, onClose}){
     spacing={1}
     sx={{overflow: 'scroll', width: '200px'}}
   >
-<Stack
-  direction='column'
-  justifyContent="center"
-  spacing={1}
-  sx={{ overflow: 'scroll', width: '200px' }}
->
-  {
-    res.map((project, index) => (
-      <Chip
-        key={index} // Use a unique identifier for `key` if available
-        label={`${project.iri}`} // Convert `project.iri` to a string, if it's not already
-        variant='contained'
-        onClick={async () => {
-          onGoToLocation(project.lat, project.lng, 14)
-          onClose()
-        }}
-        color='primary'
-      />
-    ))
-  }
-  </Stack>
-  </Stack>
+    <Stack
+      direction='column'
+      justifyContent="center"
+      spacing={1}
+      sx={{ overflow: 'scroll', width: '200px' }}
+    >
+      {
+        res.map((project, index) => (
+          <Chip
+            key={index} // Use a unique identifier for `key` if available
+            label={`${project.iri}`} // Convert `project.iri` to a string, if it's not already
+            variant='contained'
+            onClick={async () => {
+              onGoToLocation(project.lat, project.lng, 14)
+              onClose()
+            }}
+            color='primary'
+          />
+        ))
+      }
+      </Stack>
+    </Stack>
   )
 }
 
 export default function PrimaryAppBar({ darkTheme, changeTheme, onGoToLocation }) {
   const isMobile = useMediaQuery('(max-width:600px)');
-
 
   return (
     <Box sx={{ flexGrow: 1 }}>

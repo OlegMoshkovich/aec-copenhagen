@@ -12,7 +12,7 @@ export default function BasicAccordion({title, content, expand='false'}) {
     setExpanded(!expanded);
   };
   return (
-      <Accordion elevation={0} expanded={expanded} onChange={handleChange}>
+      <Accordion elevation={0} expanded={expanded} onChange={handleChange} sx={{width: '350px'}}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
