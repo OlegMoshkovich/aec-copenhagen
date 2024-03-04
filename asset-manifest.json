@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/aec-copenhagen/static/css/main.3cf18b34.css",
-    "main.js": "/aec-copenhagen/static/js/main.f86cc26f.js",
+    "main.js": "/aec-copenhagen/static/js/main.c70a15f3.js",
     "static/js/879.a780490d.chunk.js": "/aec-copenhagen/static/js/879.a780490d.chunk.js",
     "static/js/453.5c5cd2bb.chunk.js": "/aec-copenhagen/static/js/453.5c5cd2bb.chunk.js",
     "static/media/inter-latin-ext-700-normal.woff": "/aec-copenhagen/static/media/inter-latin-ext-700-normal.4c2578dbd1ff5ea14172.woff",
@@ -62,12 +62,12 @@
     "static/media/inter-vietnamese-400-normal.woff2": "/aec-copenhagen/static/media/inter-vietnamese-400-normal.5952d3d3c5df5a2f8e09.woff2",
     "index.html": "/aec-copenhagen/index.html",
     "main.3cf18b34.css.map": "/aec-copenhagen/static/css/main.3cf18b34.css.map",
-    "main.f86cc26f.js.map": "/aec-copenhagen/static/js/main.f86cc26f.js.map",
+    "main.c70a15f3.js.map": "/aec-copenhagen/static/js/main.c70a15f3.js.map",
     "879.a780490d.chunk.js.map": "/aec-copenhagen/static/js/879.a780490d.chunk.js.map",
     "453.5c5cd2bb.chunk.js.map": "/aec-copenhagen/static/js/453.5c5cd2bb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3cf18b34.css",
-    "static/js/main.f86cc26f.js"
+    "static/js/main.c70a15f3.js"
   ]
 }
