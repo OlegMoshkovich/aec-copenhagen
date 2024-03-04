@@ -79,7 +79,7 @@ function App({changeTheme, darkTheme}) {
         direction="column"
         justifyContent="space-between"
         alignItems="center"
-        sx={{position:'fixed', right: (rightDrawer && !isMobile) ? '400px' : '20px', top: '77px', height:'82%'}}
+        sx={{position:'fixed', right: (rightDrawer && !isMobile) ? '400px' : '20px', top: '77px', height:isMobile?'78%':'82%'}}
       >
         {!isMobile &&
           <Stack spacing={0}>
@@ -110,6 +110,7 @@ function App({changeTheme, darkTheme}) {
           aria-label="account of current user"
           aria-haspopup="true"
           sx={{border:'1px solid #F2B138'}}
+          selected={showChatUI}
           onClick={()=>setShowChatUI(!showChatUI)}
         >
           <Typography variant='overline' sx={{width:30, height:30, fontWeight:'bold'}}>
@@ -137,7 +138,8 @@ function App({changeTheme, darkTheme}) {
         alignItems="center"
         sx={{
           position: 'fixed',
-          top: '140px',
+          bottom: '120px',
+          right: '26px',
           width: '100%',
         }}
         >
