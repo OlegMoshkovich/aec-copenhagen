@@ -1,12 +1,10 @@
 import React, { useRef, useImperativeHandle, forwardRef, useState } from 'react';
 import MapGL, { Marker } from 'react-map-gl';
-// import useStore from './Store'; // Adjust the path as needed
 
 const Map = forwardRef((props, ref) => {
   const mapRef = useRef();
   const [activeMarker, setActiveMarker] = useState(null); // State to track the active marker
   // const toggleShowViewer = useStore((state) => state.toggleShowViewer);
-
 
   const goToLocation = (lat, lng, zoom=10) => {
     const map = mapRef.current.getMap();
@@ -28,6 +26,12 @@ const Map = forwardRef((props, ref) => {
     goToLocation
   }));
 
+  const markerStyle={
+    width: '16px',
+    height: '16px',
+    borderRadius: '50%',
+  }
+
   return (
     <MapGL
       ref={mapRef}
@@ -40,38 +44,32 @@ const Map = forwardRef((props, ref) => {
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
     >
         <Marker latitude={55.6811} longitude={12.5981}>
-  <button onClick={() => onMarkerClick('marker1')} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-    <div style={{
-      backgroundColor: activeMarker === 'marker1' ? '#F2B138' : '#172DEF',
-      width: '20px',
-      height: '20px',
-      borderRadius: '50%',
-      border: activeMarker === 'marker1' ? '6px solid blue' : '1px solid #E9B352'
-    }}></div>
-  </button>
-</Marker>
-<Marker latitude={55.6720447} longitude={12.575995}>
-  <button onClick={() => onMarkerClick('marker2')} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-    <div style={{
-      backgroundColor: activeMarker === 'marker2' ? '#F2B138' : '#172DEF',
-      width: '20px',
-      height: '20px',
-      borderRadius: '50%',
-      border: activeMarker === 'marker2' ? '6px solid blue' : '1px solid #E9B352'
-    }}></div>
-  </button>
-</Marker>
-<Marker latitude={55.7676765} longitude={12.4998316}>
-  <button onClick={() => onMarkerClick('marker3')} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
-    <div style={{
-      backgroundColor: activeMarker === 'marker3' ? '#F2B138' : '#172DEF',
-      width: '20px',
-      height: '20px',
-      borderRadius: '50%',
-      border: activeMarker === 'marker3' ? '6px solid blue' : '1px solid #E9B352'
-    }}></div>
-  </button>
-</Marker>
+          <button onClick={() => onMarkerClick('marker1')} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+            <div style={{
+              ...markerStyle,
+              backgroundColor: activeMarker === 'marker1' ? '#F2B138' : '#172DEF',
+              border: activeMarker === 'marker1' ? '6px solid blue' : '1px solid #E9B352'
+            }}></div>
+          </button>
+        </Marker>
+        <Marker latitude={55.6720447} longitude={12.575995}>
+          <button onClick={() => onMarkerClick('marker2')} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+            <div style={{
+              ...markerStyle,
+              backgroundColor: activeMarker === 'marker2' ? '#F2B138' : '#172DEF',
+              border: activeMarker === 'marker2' ? '6px solid blue' : '1px solid #E9B352'
+            }}></div>
+          </button>
+        </Marker>
+        <Marker latitude={55.7676765} longitude={12.4998316}>
+          <button onClick={() => onMarkerClick('marker3')} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
+            <div style={{
+              ...markerStyle,
+              backgroundColor: activeMarker === 'marker3' ? '#F2B138' : '#172DEF',
+              border: activeMarker === 'marker3' ? '6px solid blue' : '1px solid #E9B352'
+            }}></div>
+          </button>
+        </Marker>
       </MapGL>
   )
 });
