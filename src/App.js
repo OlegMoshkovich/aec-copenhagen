@@ -190,7 +190,7 @@ function App({changeTheme, darkTheme}) {
         </IconButton>
           <iframe
             style={{borderRadius: '10px', border:'2px solid #F2B138'}}
-            src="https://deploy-preview-1010--bldrs-share.netlify.app/share/v/gh/bldrs-ai/test-models/main/MC-ARCH_2019_w_rooms.ifc/106/2701979/116/211/178372/178543#c:102.999,12.491,124.849,-15.437,-23.396,-9.741" width="360" height="360" frameborder="0">
+            src="https://deploy-preview-1010--bldrs-share.netlify.app/share/v/gh/bldrs-ai/test-models/main/ifc/misc/haus.ifc" width="360" height="360" frameborder="0">
                 Your browser does not support iframes.
           </iframe>
           </Box>
