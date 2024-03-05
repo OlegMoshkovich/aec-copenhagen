@@ -11,6 +11,7 @@ import AppBar from './AppBar'
 import Drawer from './SideDrawer3'
 import PropertiesList from './PropertiesList'
 import MobileDrawer from './DrawerMobile'
+import Dialog from './Dialog'
 import useMediaQuery from '@mui/material/useMediaQuery';
 import AddIcon from '@mui/icons-material/Add';
 import { useTheme } from '@mui/material/styles';
@@ -20,7 +21,40 @@ import Map from './MapBox'
 import CircularProgress from '@mui/material/CircularProgress';
 import ViewInArIcon from '@mui/icons-material/ViewInAr';
 import TryOutlinedIcon from '@mui/icons-material/TryOutlined';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import Logo from './Logo'
 
+
+
+
+const AboutShare = () => {
+  return(
+    <Stack sx={{height: '220px', overflow: 'scroll', paddingTop: '20px'}}>
+    <Typography variant='body1' color='default'>
+      Portfolio is a project completed during AEC hackathon in Copenhagen.
+    </Typography>
+    <Typography variant='body1'>
+      It was created in response to the challenge posted by Prop tech Denmark.
+    </Typography>
+    <Typography variant='body1'>
+      It's mission is to serve as an agreggator of project informaiton for the organizations that management large real estate portfolios.
+    </Typography>
+  </Stack>
+  )
+}
+
+const Help = () => {
+  return(
+    <Stack sx={{height: '220px', overflow: 'scroll', paddingTop: '20px'}}>
+    <Typography variant='body1' color='default'>
+      Click on the cube to get access to the 3d model of the project.
+    </Typography>
+    <Typography variant='body1'>
+      Click on the chat to engage chatGPT.
+    </Typography>
+  </Stack>
+  )
+}
 
 function App({changeTheme, darkTheme}) {
   const {
@@ -76,6 +110,38 @@ function App({changeTheme, darkTheme}) {
       >
         <Map ref={mapComponentRef}/>
       </Box>
+      <Stack
+        direction="column"
+        justifyContent="space-between"
+        alignItems="center"
+        sx={{position:'fixed',  left:'22px', top: '84px', height:'88%', zIndex:100}}
+      >
+          <Dialog
+            iconButton={true}
+            tabs={true}
+            tabList={['Project Info', 'Help']}
+            dialogTitle={
+            <Stack
+            alignItems={'center'}
+            justifyContent={'center'}
+            direction='row'
+            spacing={2}
+            >
+              <Logo/>
+                <Typography variant={'body1'} color='primary'>
+                Portfolio
+                </Typography>
+              </Stack>
+            }
+            dialogContent1={
+              <AboutShare/>
+            }
+            dialogContent2={
+              <Help/>
+            }
+            icon={<HelpOutlineIcon size='inherit' color='primary'/>}
+          />
+      </Stack>
 
       <Stack
         direction="column"
@@ -173,7 +239,7 @@ function App({changeTheme, darkTheme}) {
         id='viewer'
         sx={{
           position:'absolute',
-          top:120,
+          top:isMobile? 150:120 ,
           left:10,
           width:360,
           height:360,
