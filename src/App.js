@@ -30,14 +30,8 @@ import Logo from './Logo'
 const AboutShare = () => {
   return(
     <Stack sx={{height: '220px', overflow: 'scroll', paddingTop: '20px'}}>
-    <Typography variant='body1' color='default'>
-      Portfolio is a project completed during AEC hackathon in Copenhagen.
-    </Typography>
-    <Typography variant='body1'>
-      It was created in response to the challenge posted by Prop tech Denmark.
-    </Typography>
-    <Typography variant='body1'>
-      It's mission is to serve as an agreggator of project informaiton for the organizations that management large real estate portfolios.
+    <Typography variant='body1' color='default' sx={{fontWeight:'bold'}}>
+      Portfolio is a tool we made at the AEC Hackathon in Copenhagen. It helps organizations manage their big real estate portfolios by putting all the information in one place. It's easy to use and helps people make better decisions about their properties.
     </Typography>
   </Stack>
   )
@@ -55,6 +49,29 @@ const Help = () => {
   </Stack>
   )
 }
+
+const Team = () => {
+  return(
+    <Stack spacing={1} sx={{height: '220px', overflow: 'scroll', paddingTop: '20px', fontWeight: 'bold'}}>
+      <Typography variant='body1' color='default'>
+        <a href="https://www.linkedin.com/in/lucasedwards/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+          Lucas Edwards
+        </a>{' '}from Proptech Denmark
+      </Typography>
+      <Typography variant='body1' color='default'>
+        <a href="https://www.linkedin.com/in/mads-holten-rasmussen-061b7414/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit'}}>
+          Mads Holten Rasmussen
+        </a>{' '}from QAECY
+      </Typography>
+      <Typography variant='body1' color='default'>
+        <a href="https://www.linkedin.com/in/olegmoshkovich/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit'}}>
+          Oleg Moshkovich
+        </a>{' '}from Bldrs.ai
+      </Typography>
+    </Stack>
+  )
+}
+
 
 function App({changeTheme, darkTheme}) {
   const {
@@ -119,13 +136,13 @@ function App({changeTheme, darkTheme}) {
           <Dialog
             iconButton={true}
             tabs={true}
-            tabList={['Project Info', 'Help']}
+            tabList={['Project Info', 'Team', 'Help']}
             dialogTitle={
             <Stack
             alignItems={'center'}
             justifyContent={'center'}
             direction='row'
-            spacing={2}
+            spacing={1}
             >
               <Logo/>
                 <Typography variant={'body1'} color='primary'>
@@ -137,6 +154,9 @@ function App({changeTheme, darkTheme}) {
               <AboutShare/>
             }
             dialogContent2={
+              <Team/>
+            }
+            dialogContent3={
               <Help/>
             }
             icon={<HelpOutlineIcon size='inherit' color='primary'/>}
@@ -239,7 +259,7 @@ function App({changeTheme, darkTheme}) {
         id='viewer'
         sx={{
           position:'absolute',
-          top:isMobile? 150:120 ,
+          top:isMobile? 150:140 ,
           left:10,
           width:360,
           height:360,
