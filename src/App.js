@@ -56,22 +56,21 @@ const Team = () => {
       <Typography variant='body1' color='default'>
         <a href="https://www.linkedin.com/in/lucasedwards/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
           Lucas Edwards
-        </a>{' '}from Proptech Denmark
+        </a><br />from Proptech Denmark
       </Typography>
       <Typography variant='body1' color='default'>
         <a href="https://www.linkedin.com/in/mads-holten-rasmussen-061b7414/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit'}}>
           Mads Holten Rasmussen
-        </a>{' '}from QAECY
+        </a><br />from QAECY
       </Typography>
       <Typography variant='body1' color='default'>
         <a href="https://www.linkedin.com/in/olegmoshkovich/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit'}}>
           Oleg Moshkovich
-        </a>{' '}from Bldrs.ai
+        </a><br />from Bldrs.ai
       </Typography>
     </Stack>
   )
 }
-
 
 function App({changeTheme, darkTheme}) {
   const {
@@ -259,7 +258,7 @@ function App({changeTheme, darkTheme}) {
         id='viewer'
         sx={{
           position:'absolute',
-          top:isMobile? 150:140 ,
+          top:140 ,
           left:10,
           width:360,
           height:360,
