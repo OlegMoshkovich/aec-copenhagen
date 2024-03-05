@@ -66,7 +66,7 @@ function ChatUI({closeWindow}) {
         }}
       >
         <Typography variant="body1" sx={{marginLeft: '14px'}} >
-          Chat
+          Chat GPT
         </Typography>
         <IconButton size="small" onClick={closeWindow}>
           <CloseIcon fontSize="small" />

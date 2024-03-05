@@ -18,6 +18,8 @@ import ChatUI from './ChatUI'
 import Close from '@mui/icons-material/Close';
 import Map from './MapBox'
 import CircularProgress from '@mui/material/CircularProgress';
+import ViewInArIcon from '@mui/icons-material/ViewInAr';
+import TryOutlinedIcon from '@mui/icons-material/TryOutlined';
 
 
 function App({changeTheme, darkTheme}) {
@@ -79,7 +81,7 @@ function App({changeTheme, darkTheme}) {
         direction="column"
         justifyContent="space-between"
         alignItems="center"
-        sx={{position:'fixed', right: (rightDrawer && !isMobile) ? '400px' : '20px', top: '77px', height:isMobile?'78%':'82%'}}
+        sx={{position:'fixed', right: (rightDrawer && !isMobile) ? '400px' : '20px', top: '77px', height:isMobile?'73%':'82%'}}
       >
         {!isMobile &&
           <Stack spacing={0}>
@@ -103,19 +105,18 @@ function App({changeTheme, darkTheme}) {
           aria-label="account of current user"
           aria-haspopup="true"
           onClick={()=>setViewerLoading(!viewerLoading)}
-        />
+        >
+          <ViewInArIcon size='inherit' color={viewerLoading ? 'primary' : 'default'}/>
+        </IconButton>
         <IconButton
           size="large"
           edge="end"
           aria-label="account of current user"
           aria-haspopup="true"
-          sx={{border:'1px solid #F2B138'}}
           selected={showChatUI}
           onClick={()=>setShowChatUI(!showChatUI)}
         >
-          <Typography variant='overline' sx={{width:30, height:30, fontWeight:'bold'}}>
-            GPT
-          </Typography>
+          <TryOutlinedIcon size='inherit' color={showChatUI ? 'primary' : 'default'}/>
         </IconButton>
       </Stack>
 
