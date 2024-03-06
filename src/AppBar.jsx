@@ -7,6 +7,7 @@ import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Logo from './Logo'
+import LogoB from './LogoB'
 import Stack from '@mui/material/Stack'
 import PortraitOutlinedIcon from '@mui/icons-material/PortraitOutlined';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -135,7 +136,7 @@ export default function PrimaryAppBar({ darkTheme, changeTheme, onGoToLocation }
               aria-haspopup="true"
               color="inherit"
             >
-              <PortraitOutlinedIcon size='inherit' color='default'/>
+              <LogoB/>
             </IconButton>
           </Stack>
         </Toolbar>
