@@ -40,7 +40,7 @@ export const themeComponent = {
     MuiFormControl: {
       styleOverrides: {
         root: ({ theme }) => ({
-          border:'none'
+          border:'none',
         }),
       }
     },
@@ -128,6 +128,25 @@ export const themeComponent = {
         content: {
           width: '93%',
         }
+      },
+    },
+    MuiAutocomplete: {
+      styleOverrides: {
+        inputRoot: ({ theme }) => ({
+          backgroundColor: theme.palette.background.default ,
+          '& .MuiOutlinedInput-notchedOutline': {
+            borderColor: theme.palette.primary.main,
+          },
+          '&:hover .MuiOutlinedInput-notchedOutline': {
+            borderColor: theme.palette.primary.main,
+          },
+        }),
+        input: ({ theme }) => ({
+          color: theme.palette.primary.main,
+          '&::placeholder': {
+            color:  theme.palette.primary.main, // Example: change the placeholder text color to red
+          },
+        }),
       },
     },
   },
