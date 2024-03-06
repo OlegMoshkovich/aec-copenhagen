@@ -27,7 +27,7 @@ const Map = forwardRef((props, ref) => {
   return (
     <MapGL
       ref={mapRef}
-      initialViewState={{ latitude: 47.3769, longitude: 8.5417, zoom: 10 }}
+      initialViewState={{ latitude: 47.3769, longitude: 8.5417, zoom: 6 }}
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
       mapStyle="mapbox://styles/aechack2024/cltfvi20g00r401qn6l1shoag"
     >
