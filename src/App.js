@@ -30,8 +30,12 @@ import Logo from './LogoSP'
 const AboutShare = () => {
   return(
     <Stack sx={{height: '220px', overflow: 'scroll', paddingTop: '20px'}}>
-    <Typography variant='body1' color='default' sx={{fontWeight:'bold'}}>
-      Portfolio is a tool we made at the AEC Hackathon in Copenhagen. It helps organizations manage their big real estate portfolios by putting all the information in one place. It's easy to use and helps people make better decisions about their properties.
+    <Typography variant='body1' color='default'>
+      Welcome to the the portfolio
+      of swiss property projects supporte by bldrs.ai.
+      Please choose a project either by clicking on the map anchor or through the projects tab.
+      <br/>
+      Each project contains a 3d model, click on the cube to see the model, <br/>or chat about the project with the assistant.
     </Typography>
   </Stack>
   )
@@ -50,27 +54,6 @@ const Help = () => {
   )
 }
 
-const Team = () => {
-  return(
-    <Stack spacing={1} sx={{height: '220px', overflow: 'scroll', paddingTop: '20px', fontWeight: 'bold'}}>
-      <Typography variant='body1' color='default'>
-        <a href="https://www.linkedin.com/in/lucasedwards/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-          Lucas Edwards
-        </a><br />from Proptech Denmark
-      </Typography>
-      <Typography variant='body1' color='default'>
-        <a href="https://www.linkedin.com/in/mads-holten-rasmussen-061b7414/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit'}}>
-          Mads Holten Rasmussen
-        </a><br />from QAECY
-      </Typography>
-      <Typography variant='body1' color='default'>
-        <a href="https://www.linkedin.com/in/olegmoshkovich/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit'}}>
-          Oleg Moshkovich
-        </a><br />from Bldrs.ai
-      </Typography>
-    </Stack>
-  )
-}
 
 function App({changeTheme, darkTheme}) {
   const {
@@ -135,7 +118,7 @@ function App({changeTheme, darkTheme}) {
           <Dialog
             iconButton={true}
             tabs={true}
-            tabList={['Project Info', 'Team', 'Help']}
+            tabList={['Info']}
             dialogTitle={
             <Stack
             alignItems={'center'}
@@ -145,15 +128,12 @@ function App({changeTheme, darkTheme}) {
             >
               <Logo/>
                 <Typography variant={'body1'} color='primary'>
-                Portfolio
+                Swiss Property Portfolio
                 </Typography>
               </Stack>
             }
             dialogContent1={
               <AboutShare/>
-            }
-            dialogContent2={
-              <Team/>
             }
             dialogContent3={
               <Help/>

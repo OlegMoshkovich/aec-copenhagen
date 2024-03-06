@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import Logo from './LogoSP'
 import LogoB from './LogoB'
 import Stack from '@mui/material/Stack'
-import PortraitOutlinedIcon from '@mui/icons-material/PortraitOutlined';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import AutocompleteExample from './AutoComplete'
 import Dialog from './Dialog'

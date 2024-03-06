@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography';
 import Tabs from './Tabs'
 import {Stack} from '@mui/system';
 import IconButton from '@mui/material/IconButton';
-import useStore from './Store';
 
 export default function Dialog({
   buttonLabel='dialog',
