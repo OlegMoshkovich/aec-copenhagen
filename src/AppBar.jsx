@@ -12,6 +12,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import AutocompleteExample from './AutoComplete'
 import Dialog from './Dialog'
 import Projects from './Projects'
+import { useTheme } from '@mui/material/styles';
 
 
 const searchElements = [
@@ -24,12 +25,13 @@ const searchElements = [
 
 export default function PrimaryAppBar({ darkTheme, changeTheme, onGoToLocation }) {
   const isMobile = useMediaQuery('(max-width:600px)');
+  const theme = useTheme()
 
   return (
       <AppBar
         color='secondary'
         elevation={0}
-        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, borderBottom: '1px solid #323232', backgroundColor: (theme) => theme.palette.background.default }}
+        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, borderBottom: `1px solid ${theme.palette.background.paper}`, backgroundColor: theme.palette.background.default }}
       >
       <Toolbar>
         <Stack
@@ -45,6 +47,7 @@ export default function PrimaryAppBar({ darkTheme, changeTheme, onGoToLocation }
             aria-haspopup="true"
             color="inherit"
             onClick={onGoToLocation}
+            sx={{border:'none'}}
           >
               <Logo scaled={true}/>
             </IconButton>
@@ -96,6 +99,7 @@ export default function PrimaryAppBar({ darkTheme, changeTheme, onGoToLocation }
               aria-label="account of current user"
               aria-haspopup="true"
               color="inherit"
+              sx={{border:'none'}}
             >
               <PortraitOutlinedIcon size='inherit' />
             </IconButton>

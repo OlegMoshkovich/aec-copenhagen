@@ -15,7 +15,7 @@ import { lightTheme, darkTheme} from './theme'
 
 
 const Sample = () =>{
-const [dark, setDark] = useState(true)
+const [dark, setDark] = useState(false)
 const { borderRadius, themeScheme,  } = useStore((state) => ({
   borderRadius: state.borderRadius,
   themeScheme: state.themeScheme,

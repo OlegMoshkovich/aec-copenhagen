@@ -275,7 +275,7 @@ function App({changeTheme, darkTheme}) {
           <Close size='inherit'  />
         </IconButton>
           <iframe
-            style={{borderRadius: '10px', border:'2px solid #F2B138'}}
+            style={{borderRadius: '10px', border: `2px solid ${theme.palette.primary.main}`}}
             src="https://deploy-preview-1010--bldrs-share.netlify.app/share/v/gh/bldrs-ai/test-models/main/ifc/misc/haus.ifc" width="360" height="360" frameborder="0">
                 Your browser does not support iframes.
           </iframe>

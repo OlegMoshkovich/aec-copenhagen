@@ -27,7 +27,7 @@ export const themeComponent = {
         root:({ theme }) => ({
           backgroundColor: theme.palette.background.default, // use palette color here
           color:  theme.palette.primary.main, // Icon color
-          // border: '1px solid #231E14',
+          border: `1px solid ${theme.palette.background.paper}`,
           '&:hover': {
             backgroundColor: theme.palette.secondary.main, // Background color on hover
           },
@@ -155,17 +155,20 @@ export const lightTheme = createTheme({
   palette: {
     mode: 'light',
     default: {
-      main: 'black',
+      main: 'white',
     },
     primary: {
       main: colors[1].primary,
     },
     secondary: {
-      main: '#1436E6',
+      main: colors[1].secondary,
     },
     background: {
-      paper: grey[300],
-      default: '#6F9ABF',
+      paper: colors[1].paper,
+      default: colors[1].default,
+    },
+    selected: {
+      main: colors[1].secondary, // Example color for selected state
     },
   },
   ...themeComponent,
