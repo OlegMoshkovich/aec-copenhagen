@@ -22,7 +22,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import ViewInArIcon from '@mui/icons-material/ViewInAr';
 import TryOutlinedIcon from '@mui/icons-material/TryOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-import Logo from './Logo'
+import Logo from './LogoSP'
 
 
 
@@ -176,10 +176,10 @@ function App({changeTheme, darkTheme}) {
               edge="end"
               aria-label="account of current user"
               aria-haspopup="true"
-              color="inherit"
+              selected={rightDrawer}
               onClick={()=>toggleRightDrawer()}
             >
-              <MenuOutlinedIcon size='inherit' color={rightDrawer ? 'primary' : 'default'}/>
+              <MenuOutlinedIcon size='inherit'/>
             </IconButton>
             </Tooltip>
           </Stack>
@@ -191,7 +191,7 @@ function App({changeTheme, darkTheme}) {
           aria-haspopup="true"
           onClick={()=>setViewerLoading(!viewerLoading)}
         >
-          <ViewInArIcon size='inherit' color={viewerLoading ? 'primary' : 'default'}/>
+          <ViewInArIcon size='inherit'/>
         </IconButton>
         <IconButton
           size="large"
@@ -201,7 +201,7 @@ function App({changeTheme, darkTheme}) {
           selected={showChatUI}
           onClick={()=>setShowChatUI(!showChatUI)}
         >
-          <TryOutlinedIcon size='inherit' color={showChatUI ? 'primary' : 'default'}/>
+          <TryOutlinedIcon size='inherit'/>
         </IconButton>
       </Stack>
 
@@ -272,7 +272,7 @@ function App({changeTheme, darkTheme}) {
           sx={{position:'absolute', right:'10px', top:'18px'}}
           onClick={()=>setViewerLoading(false)}
         >
-          <Close size='inherit' color={showChatUI ? "primary" : "default"} />
+          <Close size='inherit'  />
         </IconButton>
           <iframe
             style={{borderRadius: '10px', border:'2px solid #F2B138'}}

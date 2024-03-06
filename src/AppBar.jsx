@@ -1,18 +1,17 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
-import Chip from '@mui/material/Chip'
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Logo from './Logo'
+import Logo from './LogoSP'
 import Stack from '@mui/material/Stack'
 import PortraitOutlinedIcon from '@mui/icons-material/PortraitOutlined';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import AutocompleteExample from './AutoComplete'
-import useStore from './Store';
 import Dialog from './Dialog'
+import Projects from './Projects'
 
 
 const searchElements = [
@@ -21,53 +20,16 @@ const searchElements = [
   { title: 'address 3' },
   { title: 'address 4' },
 ]
-function Recent({onGoToLocation, onClose}){
-  const {res, setProject} = useStore()
-  console.log('res from dialog', res)
 
-  return(
-    <Stack
-    direction='column'
-    justifyContent="center"
-    spacing={1}
-    sx={{overflow: 'scroll', width: '200px'}}
-  >
-    <Stack
-      direction='column'
-      justifyContent="center"
-      spacing={1}
-      sx={{ overflow: 'scroll', width: '200px' }}
-    >
-      {
-        res.map((project, index) => (
-          <Chip
-            key={index} // Use a unique identifier for `key` if available
-            label={`${project.iri}`} // Convert `project.iri` to a string, if it's not already
-            variant='contained'
-            onClick={async () => {
-              onGoToLocation(project.lat, project.lng, 14)
-              onClose()
-            }}
-            color='primary'
-          />
-        ))
-      }
-      </Stack>
-    </Stack>
-  )
-}
 
 export default function PrimaryAppBar({ darkTheme, changeTheme, onGoToLocation }) {
   const isMobile = useMediaQuery('(max-width:600px)');
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
       <AppBar
-        color='default'
+        color='secondary'
         elevation={0}
-        position="fixed"
-        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, borderBottom: '1px solid #323232' }}
-        size='small'
+        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, borderBottom: '1px solid #323232', backgroundColor: (theme) => theme.palette.background.default }}
       >
       <Toolbar>
         <Stack
@@ -98,7 +60,7 @@ export default function PrimaryAppBar({ darkTheme, changeTheme, onGoToLocation }
                 </Typography>
               }
               dialogContent={
-                <Recent onGoToLocation={onGoToLocation}/>
+                <Projects onGoToLocation={onGoToLocation}/>
               }
             />
         </Stack>
@@ -135,11 +97,10 @@ export default function PrimaryAppBar({ darkTheme, changeTheme, onGoToLocation }
               aria-haspopup="true"
               color="inherit"
             >
-              <PortraitOutlinedIcon size='inherit' color='default'/>
+              <PortraitOutlinedIcon size='inherit' />
             </IconButton>
           </Stack>
         </Toolbar>
       </AppBar>
-    </Box>
   );
 }

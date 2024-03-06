@@ -40,14 +40,14 @@ const Map = forwardRef((props, ref) => {
         longitude: 12.5981,
         zoom: 7
       }}
-      mapStyle="mapbox://styles/aechack2024/cltb88ibs00d201qsdm0cfzqd"
+      mapStyle="mapbox://styles/aechack2024/cltfod136007i01qp9kv97vir"
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
     >
         <Marker latitude={55.6811} longitude={12.5981}>
           <button onClick={() => onMarkerClick('marker1')} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
             <div style={{
               ...markerStyle,
-              backgroundColor: activeMarker === 'marker1' ? '#F2B138' : '#172DEF',
+              backgroundColor: activeMarker === 'marker1' ? '#F2B138' : '#204F2B',
               border: activeMarker === 'marker1' ? '6px solid blue' : '1px solid #E9B352'
             }}></div>
           </button>
@@ -56,7 +56,7 @@ const Map = forwardRef((props, ref) => {
           <button onClick={() => onMarkerClick('marker2')} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
             <div style={{
               ...markerStyle,
-              backgroundColor: activeMarker === 'marker2' ? '#F2B138' : '#172DEF',
+              backgroundColor: activeMarker === 'marker2' ? '#F2B138' : '#204F2B',
               border: activeMarker === 'marker2' ? '6px solid blue' : '1px solid #E9B352'
             }}></div>
           </button>
@@ -65,7 +65,7 @@ const Map = forwardRef((props, ref) => {
           <button onClick={() => onMarkerClick('marker3')} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
             <div style={{
               ...markerStyle,
-              backgroundColor: activeMarker === 'marker3' ? '#F2B138' : '#172DEF',
+              backgroundColor: activeMarker === 'marker3' ? '#F2B138' : '#204F2B',
               border: activeMarker === 'marker3' ? '6px solid blue' : '1px solid #E9B352'
             }}></div>
           </button>

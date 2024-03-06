@@ -26,11 +26,14 @@ export const themeComponent = {
       styleOverrides: {
         root:({ theme }) => ({
           backgroundColor: theme.palette.background.default, // use palette color here
-          color: '#fff', // Icon color
-          border: '1px solid #231E14',
+          color:  theme.palette.primary.main, // Icon color
+          // border: '1px solid #231E14',
           '&:hover': {
-            backgroundColor: 'blue', // Background color on hover
+            backgroundColor: theme.palette.secondary.main, // Background color on hover
           },
+        }),
+        selected:({ theme }) => ({
+          backgroundColor: theme.palette.secondary.main, // use palette color here
         })
       },
     },
@@ -136,14 +139,14 @@ export const lightTheme = createTheme({
       main: 'black',
     },
     primary: {
-      main: colors[0].primary,
+      main: colors[1].primary,
     },
     secondary: {
-      main: grey[300],
+      main: '#1436E6',
     },
     background: {
-      paper: grey[300],  // Change to your desired color
-      default: '#6F9ABF',  // Change to your desired color
+      paper: grey[300],
+      default: '#6F9ABF',
     },
   },
   ...themeComponent,
@@ -155,14 +158,17 @@ export const darkTheme = createTheme({
       main: 'white',
     },
     primary: {
-      main: colors[0].primary,
+      main: colors[1].primary,
     },
     secondary: {
-      main: grey[800]
+      main: colors[1].secondary,
     },
     background: {
-      paper: '#434D58',  // Change to your desired color
-      default: '#0D0D0D',  // Change to your desired color
+      paper: colors[1].paper,
+      default: colors[1].default,
+    },
+    selected: {
+      main: colors[1].secondary, // Example color for selected state
     },
   },
   ...themeComponent,
