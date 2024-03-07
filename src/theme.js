@@ -27,7 +27,7 @@ export const themeComponent = {
         root:({ theme }) => ({
           backgroundColor: theme.palette.background.default, // use palette color here
           color: '#fff', // Icon color
-          border: '1px solid #231E14',
+          // border: '1px solid #231E14',
           '&:hover': {
             backgroundColor: 'blue', // Background color on hover
           },

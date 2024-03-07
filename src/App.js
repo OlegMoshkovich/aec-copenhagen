@@ -31,7 +31,7 @@ const AboutShare = () => {
   return(
     <Stack sx={{height: '220px', overflow: 'scroll', paddingTop: '20px'}}>
     <Typography variant='body1' color='default' sx={{fontWeight:'bold'}}>
-      Portfolio is a tool we made at the AEC Hackathon in Copenhagen. It helps organizations manage their big real estate portfolios by putting all the information in one place. It's easy to use and helps people make better decisions about their properties.
+      PortUp is a tool we made at the AEC Hackathon in Copenhagen. It helps organizations manage their big real estate portfolios by putting all the information in one place. It's easy to use and helps people make better decisions about their properties.
     </Typography>
   </Stack>
   )
@@ -145,7 +145,7 @@ function App({changeTheme, darkTheme}) {
             >
               <Logo/>
                 <Typography variant={'body1'} color='primary'>
-                Portfolio
+                PortUp
                 </Typography>
               </Stack>
             }
