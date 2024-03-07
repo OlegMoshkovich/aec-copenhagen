@@ -8,32 +8,16 @@ const useStore = create((set) => ({
   circles:[],
   res:[
       {
-          "iri": "http://example.com/buildings/BB/ESP4",
-          "label": "Replacement of light bulbs on the back stairs and in the basement",
-          "investment": "1000",
-          "calculatedAnnualSavings": "2800",
-          "simpleRepaymentPeriod": "0.4"
+          "iri": "Project 1",
       },
       {
-          "iri": "http://example.com/buildings/BB/ESP1",
-          "label": "Re-insulation of floor towards the outside",
-          "investment": "23400",
-          "calculatedAnnualSavings": "1600",
-          "simpleRepaymentPeriod": "15"
+          "iri": "Project 2",
       },
       {
-          "iri": "http://example.com/buildings/BB/ESP2",
-          "label": "Re-insulation of hot water risers",
-          "investment": "19200",
-          "calculatedAnnualSavings": "5600",
-          "simpleRepaymentPeriod": "3.5"
+          "iri": "Project 3",
       },
       {
-          "iri": "http://example.com/buildings/BB/ESP3",
-          "label": "Re-insulation of molded floor covering against unheated basement",
-          "investment": "236000",
-          "calculatedAnnualSavings": "6500",
-          "simpleRepaymentPeriod": "36"
+          "iri": "Project 4",
       }
   ],
   rightDrawer:false,

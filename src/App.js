@@ -135,7 +135,7 @@ function App({changeTheme, darkTheme}) {
           <Dialog
             iconButton={true}
             tabs={true}
-            tabList={['Project Info', 'Team', 'Help']}
+            tabList={['Project Info', 'Team']}
             dialogTitle={
             <Stack
             alignItems={'center'}
@@ -154,9 +154,6 @@ function App({changeTheme, darkTheme}) {
             }
             dialogContent2={
               <Team/>
-            }
-            dialogContent3={
-              <Help/>
             }
             icon={<HelpOutlineIcon size='inherit' color='primary'/>}
           />
@@ -262,8 +259,8 @@ function App({changeTheme, darkTheme}) {
           left:10,
           width:360,
           height:360,
-          backgroundColor:'#0D0D0D',
-          borderRadius:'20px'}}>
+          borderRadius: '10px',
+          backgroundColor:'#0D0D0D'}}>
         <IconButton
           size="small"
           edge="end"
@@ -275,6 +272,7 @@ function App({changeTheme, darkTheme}) {
           <Close size='inherit' color={showChatUI ? "primary" : "default"} />
         </IconButton>
           <iframe
+            title='3D model'
             style={{borderRadius: '10px', border:'2px solid #F2B138'}}
             src="https://deploy-preview-1010--bldrs-share.netlify.app/share/v/gh/bldrs-ai/test-models/main/ifc/misc/haus.ifc" width="360" height="360" frameborder="0">
                 Your browser does not support iframes.
