@@ -1,32 +1,41 @@
 import { create } from 'zustand'
-const firstNote =
-{
-  title:'Welcome to Notes',
-  date: '17.09.2023',
-  content:`We believe in using the right tool for the job. As an integration enviromemnt, we
-  offer several integrations to enable collaboration workflows around 3D content.
-  Notion, Linear, GitHub or X seem to be solid choices for note-based worlflows. While GitHub is foundational to our ecosystem and linked to Share by default,
-  other platforms might better suit your needs. Just connect to your preferred solution. Visit our Wiki to learn more about integrations`,
-  type:'image',
-  src:'https://user-images.githubusercontent.com/3433606/271344003-c505b72f-0d39-4ae1-99a4-c276daeb0733.png'
-}
-const secondNote =
-{
-  title:'Example Note',
-  date: '17.09.2023',
-  content:`Engine cross sectional plans`,
-  type:'image',
-  src:'https://i.pinimg.com/564x/ac/6d/50/ac6d50ccbde053337dae0390bd44a193.jpg'
-}
 
 const useStore = create((set) => ({
   borderRadius: 16,
   themeScheme: 0,
   showComponents: false,
   showComments: false,
-  notes:[firstNote,secondNote],
   circles:[],
-  res: [], // Initialize 'res' with an empty array
+  res:[
+      {
+          "iri": "http://example.com/buildings/BB/ESP4",
+          "label": "Replacement of light bulbs on the back stairs and in the basement",
+          "investment": "1000",
+          "calculatedAnnualSavings": "2800",
+          "simpleRepaymentPeriod": "0.4"
+      },
+      {
+          "iri": "http://example.com/buildings/BB/ESP1",
+          "label": "Re-insulation of floor towards the outside",
+          "investment": "23400",
+          "calculatedAnnualSavings": "1600",
+          "simpleRepaymentPeriod": "15"
+      },
+      {
+          "iri": "http://example.com/buildings/BB/ESP2",
+          "label": "Re-insulation of hot water risers",
+          "investment": "19200",
+          "calculatedAnnualSavings": "5600",
+          "simpleRepaymentPeriod": "3.5"
+      },
+      {
+          "iri": "http://example.com/buildings/BB/ESP3",
+          "label": "Re-insulation of molded floor covering against unheated basement",
+          "investment": "236000",
+          "calculatedAnnualSavings": "6500",
+          "simpleRepaymentPeriod": "36"
+      }
+  ],
   rightDrawer:false,
   leftDrawer: false,
   isNotesOpen: true,
@@ -34,8 +43,36 @@ const useStore = create((set) => ({
   isNavigationOpen: true,
   isTimelineOpen: true,
   showViewer: false,
-  project: [],
-  setNotes: (value) => set(() => ({ notes: value})),
+  project:[
+    {
+        "iri": "http://example.com/buildings/BB/ESP4",
+        "label": "Replacement of light bulbs on the back stairs and in the basement",
+        "investment": "1000",
+        "calculatedAnnualSavings": "2800",
+        "simpleRepaymentPeriod": "0.4"
+    },
+    {
+        "iri": "http://example.com/buildings/BB/ESP1",
+        "label": "Re-insulation of floor towards the outside",
+        "investment": "23400",
+        "calculatedAnnualSavings": "1600",
+        "simpleRepaymentPeriod": "15"
+    },
+    {
+        "iri": "http://example.com/buildings/BB/ESP2",
+        "label": "Re-insulation of hot water risers",
+        "investment": "19200",
+        "calculatedAnnualSavings": "5600",
+        "simpleRepaymentPeriod": "3.5"
+    },
+    {
+        "iri": "http://example.com/buildings/BB/ESP3",
+        "label": "Re-insulation of molded floor covering against unheated basement",
+        "investment": "236000",
+        "calculatedAnnualSavings": "6500",
+        "simpleRepaymentPeriod": "36"
+    }
+  ],
   setCircles: (value) => set(() => ({ circles: value})),
   setBorderRadius: (value) => set(() => ({ borderRadius: value})),
   setThemeScheme: (value) => set(() => ({ themeScheme: value})),
