@@ -44,7 +44,6 @@ export default function PropertiesList() {
                     <Box sx={{fontWeight:'bold'}}>{project.simpleRepaymentPeriod} years</Box>
                   </Stack>
                 </Stack>
-
                 }/>
             </ListItem>
         ))}

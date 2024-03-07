@@ -9,11 +9,12 @@ const Map = forwardRef((props, ref) => {
   const goToLocation = (lat, lng, zoom=10) => {
     const map = mapRef.current.getMap();
     map.flyTo({
-      center: [12.5981, 55.6811], // Corrected coordinates for New York City
-      zoom: zoom, // You might adjust the zoom level based on your preference
-      essential: true
+      // center: [12.5981, 55.6811],
+      center: [lng, lat],
+      zoom: 16, // You might adjust the zoom level based on your preference
+      essential: true,
+      duration: 6000,
     });
-    console.log(lng, lat)
   };
    // Function to handle marker click event
   const onMarkerClick = (markerId) => {
@@ -43,7 +44,7 @@ const Map = forwardRef((props, ref) => {
       mapStyle="mapbox://styles/aechack2024/cltb88ibs00d201qsdm0cfzqd"
       mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
     >
-        <Marker latitude={55.6811} longitude={12.5981}>
+        <Marker latitude={55.672278} longitude={12.5785}>
           <button onClick={() => onMarkerClick('marker1')} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
             <div style={{
               ...markerStyle,
@@ -52,7 +53,7 @@ const Map = forwardRef((props, ref) => {
             }}></div>
           </button>
         </Marker>
-        <Marker latitude={55.6720447} longitude={12.575995}>
+        <Marker latitude={55.6273872} longitude={12.579409}>
           <button onClick={() => onMarkerClick('marker2')} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
             <div style={{
               ...markerStyle,

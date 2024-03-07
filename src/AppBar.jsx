@@ -46,7 +46,7 @@ function Recent({onGoToLocation, onClose}){
             label={`${project.iri}`} // Convert `project.iri` to a string, if it's not already
             variant='contained'
             onClick={async () => {
-              onGoToLocation(project.lat, project.lng, 14)
+              onGoToLocation(project.lat, project.lng, 15)
               onClose()
             }}
             color='primary'

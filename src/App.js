@@ -94,6 +94,7 @@ function App({changeTheme, darkTheme}) {
     )
   }
   const triggerGoToLocation = (lat, lang) => {
+    console.log(lat, lang)
     if (mapComponentRef.current) {
       mapComponentRef.current.goToLocation(lat, lang);
     }
@@ -105,7 +106,7 @@ function App({changeTheme, darkTheme}) {
     <AppBar darkTheme={darkTheme} changeTheme={changeTheme} onGoToLocation={triggerGoToLocation}/>
     {!isMobile &&
       <Drawer
-        topPanelName={'Info'}
+        topPanelName={'Improvements'}
         topPanel={<PropertiesList/>}
         topPanelButton={<PropertiesButtons/>}
         side={'right'}

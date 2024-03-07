@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-export default function BasicAccordion({title, content, expand='false'}) {
+export default function BasicAccordion({title, content, expand=false}) {
   const [expanded, setExpanded] = React.useState(expand);
   const handleChange = () => {
     // Toggle the expanded state
