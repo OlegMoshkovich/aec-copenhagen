@@ -8,12 +8,12 @@ const useStore = create((set) => ({
   circles:[],
   res:[
       {
-          "iri": "BloxHub",
+          "iri": "Project 1",
           'lat': 55.672278,
           'lng': 12.5785,
       },
       {
-          "iri": "Ramboll Head Office",
+          "iri": "Project 2",
           'lat': 55.6273872,
           'lng': 12.579409,
       },
